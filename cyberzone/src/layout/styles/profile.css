@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+body {
+  background: #111111;
+}
+
+h1 {
+  color: #fff;
+  font-size: calc(24px + 2.1875vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  color: #fff;
+  font-size: calc(24px + 1.5625vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+h3 {
+  color: #fff;
+  font-size: calc(16px + 0.15625vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+h4 {
+  color: #fff;
+  font-size: calc(18px + 0.3125vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+h5 {
+  color: #fff;
+  font-size: calc(16px + 0.15625vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+h6 {
+  color: #fff;
+  font-size: calc(14px + 0.15625vw);
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: calc(24px + 44.8 * (100vw - 320px) / 1280);
+  }
+  h2 {
+    font-size: calc(24px + 36.8 * (100vw - 320px) / 1280);
+  }
+  h3 {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
+  }
+  h4 {
+    font-size: calc(18px + 6.8 * (100vw - 320px) / 1280);
+  }
+  h5 {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
+  }
+  h6 {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1280);
+  }
+}
+header {
+  position: relative;
+  width: 100vw;
+  height: 10vh;
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.15) 0%, rgba(34, 34, 34, 0.5) 20.83%, rgba(34, 34, 34, 0.75) 58.85%, #222222 89.06%);
+  box-shadow: 0px 4px 25px rgba(255, 0, 54, 0.25);
+  display: flex;
+  align-content: center;
+}
+header .logo {
+  position: relative;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 20vw;
+}
+header .logo a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+header .logo img {
+  height: 7.5vh;
+}
+header .logo h4 {
+  font-family: "Comfortaa", cursive;
+  margin-left: 20px;
+  text-shadow: 0px 0px 50px #FF3535, 0px 0px 25px #FF3535, 0px 0px 10px #FF3535;
+  filter: blur(0.5px);
+}
+header .content {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  right: 60px;
+  height: 5vh;
+  top: 2.75vh;
+}
+header .content .basket {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  border-radius: 100%;
+  cursor: pointer;
+}
+header .content .basket .box {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+header .content .basket .box img {
+  align-self: center;
+  height: 25px;
+  width: 25px;
+}
+header .content .basket:hover {
+  box-shadow: 0px 4px 10px rgba(245, 22, 22, 0.25), 0px 0px 15px rgba(245, 22, 22, 0.25);
+  filter: blur(0.5px);
+  transform: scale(1.05);
+}
+header .content .num {
+  margin: 0 15px 0 25px;
+}
+header .content .profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+header .content .profile:hover {
+  box-shadow: 0px 4px 10px rgba(245, 22, 22, 0.25), 0px 0px 15px rgba(245, 22, 22, 0.25);
+  filter: blur(0.5px);
+  transform: scale(1.05);
+}
+
+body .watchImg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.642);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+body .watchImg .addImg {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 10vh;
+  min-height: 60vh;
+  max-height: 80vh;
+  max-width: 80vw;
+}
+body .watchImg .deleteImg {
+  position: absolute;
+  right: 5vw;
+  top: 2vh;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+body .watchImg .watchImg {
+  display: none;
+}
+body .watchImg .blueCupImg {
+  display: none;
+}
+body .watchImg .redCupImg {
+  display: none;
+}
+
+#profPage {
+  z-index: 1;
+  min-height: 90vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px;
+}
+#profPage .userInfo {
+  position: relative;
+  height: 60vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+  border-radius: 5px;
+}
+#profPage .userInfo .container {
+  position: relative;
+  height: 80%;
+  width: 90%;
+  margin: 15px auto;
+}
+#profPage .userInfo .container .login {
+  position: absolute;
+  left: 0;
+  bottom: -11%;
+}
+#profPage .userInfo .container img {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#profPage .userInfo .container form label {
+  border-radius: 5px;
+  border: solid 1px rgba(64, 71, 223, 0.5);
+  padding: 5px 15px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(12px + 0.15625vw);
+  position: absolute;
+  right: 0;
+  bottom: -12%;
+}
+#profPage .userInfo .container form label:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(64, 71, 223, 0.25);
+  filter: blur(0.1px);
+}
+#profPage .addProduct form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 32.5vw;
+}
+#profPage .addProduct form input[type=text] {
+  width: 100%;
+  height: 32px;
+  padding-left: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: solid 1px rgba(245, 22, 22, 0.5);
+  background: #111111;
+  outline: none;
+  color: #fff;
+}
+#profPage .addProduct form input[type=text]:focus {
+  box-shadow: 0px 0px 10px rgba(245, 22, 22, 0.5);
+}
+#profPage .addProduct form .addImgBox {
+  position: relative;
+}
+#profPage .addProduct form .addImgBox #imgPrev {
+  position: relative;
+  display: grid;
+  grid-template-columns: 95px 95px 95px 95px;
+  margin: 10px 0;
+  justify-content: space-between;
+  z-index: 1;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg {
+  position: relative;
+  border: 1.5px solid rgba(64, 71, 223, 0.25);
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg:hover .deleteImg {
+  opacity: 1;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg:hover .watchImg {
+  opacity: 1;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg:hover .blueCupImg {
+  opacity: 1;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg .addImg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg .deleteImg {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+  opacity: 0;
+  height: 9px;
+  width: 9px;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg .watchImg {
+  position: absolute;
+  left: 35%;
+  top: 35%;
+  opacity: 0;
+  cursor: pointer;
+  height: 25px;
+  width: 20px;
+  background: none;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg .redCupImg {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 12px;
+  width: 12px;
+}
+#profPage .addProduct form .addImgBox #imgPrev .addedImg .blueCupImg {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: 12px;
+  width: 12px;
+  opacity: 0;
+}
+#profPage .addProduct form .addImgBox .box {
+  position: relative;
+  display: flex;
+  width: 70px;
+  height: 80px;
+  border: 1.5px solid rgba(64, 71, 223, 0.25);
+  border-radius: 5px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+#profPage .addProduct form .addImgBox .box img {
+  align-self: center;
+  height: 50%;
+}
+#profPage .addProduct form .addImgBox .box input {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+#profPage .addProduct form .addImgBox .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(64, 71, 223, 0.25);
+}
+#profPage .addProduct form .addOrChancel {
+  position: absolute;
+  right: 0;
+  bottom: -53px;
+}
+#profPage .addProduct form .addOrChancel .addProd {
+  font-size: calc(12px + 0.15625vw);
+  color: #fff;
+  padding: 8px 16px;
+  background: #111111;
+  border: 1px solid rgba(245, 22, 22, 0.5);
+  border-radius: 5px;
+  margin-right: 10px;
+}
+#profPage .addProduct form .addOrChancel .addProd:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px rgba(245, 22, 22, 0.5);
+}
+#profPage .addProduct form .addOrChancel .chancProd {
+  font-size: calc(12px + 0.15625vw);
+  color: #fff;
+  padding: 8px 16px;
+  background: #111111;
+  border: 1px solid rgba(64, 71, 223, 0.5);
+  border-radius: 5px;
+}
+#profPage .addProduct form .addOrChancel .chancProd:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(64, 71, 223, 0.25);
+}
+
+@media screen and (min-width: 280px) and (max-width: 767px) {
+  header .logo {
+    margin-left: 10px;
+  }
+  header .logo h4 {
+    margin-left: 10px;
+  }
+  header .content {
+    right: 10px;
+  }
+  header .content .num {
+    margin: 0 5px 0 10px;
+  }
+  #profPage {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+  #profPage .userInfo {
+    position: relative;
+    height: 60vh;
+    width: 90vw;
+    margin: 0 auto;
+  }
+  #profPage .addProduct {
+    margin-bottom: 5vh;
+  }
+  #profPage .addProduct form {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #profPage {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+  }
+  #profPage .userInfo {
+    position: relative;
+    height: 40vh;
+    width: 45vw;
+    margin: 0;
+  }
+  #profPage .userInfo .container {
+    position: relative;
+    height: 80%;
+    width: 90%;
+    margin: 15px auto;
+  }
+  #profPage .userInfo .container form label {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
+  }
+  #profPage .addProduct {
+    margin-left: 35vw;
+    margin-top: 1vh;
+    right: 5vw;
+    bottom: 15vh;
+  }
+  #profPage .addProduct form {
+    width: 55vw;
+  }
+  #profPage .addProduct form input[type=text] {
+    width: 100%;
+    height: 38px;
+    margin-top: 20px;
+  }
+  #profPage .addProduct form .addOrChancel .addProd {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
+  }
+  #profPage .addProduct form .addOrChancel .chancProd {
+    font-size: calc(16px + 3.4 * (100vw - 320px) / 1280);
+  }
+}/*# sourceMappingURL=profile.css.map */
